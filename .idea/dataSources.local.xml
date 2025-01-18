@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-243.23654.117">
+    <data-source name="waste" uuid="88f22168-936f-4259-95f9-9263ba7bc1a4">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="H2" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>user</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
