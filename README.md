@@ -8,6 +8,7 @@ ___
 
 ## Technical Tools
 - IntelliJ
+- Makefile
 - JDK 17 
 - Maven
 - Spring Boot
