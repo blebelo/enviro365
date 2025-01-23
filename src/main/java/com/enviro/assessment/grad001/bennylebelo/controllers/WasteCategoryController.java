@@ -4,6 +4,7 @@ import com.enviro.assessment.grad001.bennylebelo.models.WasteCategory;
 import com.enviro.assessment.grad001.bennylebelo.services.WasteCategoryService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,15 +33,17 @@ public class WasteCategoryController {
         if (category.isPresent()) {
             return ResponseEntity.ok(category);
         } else {
-            Map<String, String> response = Map.of("ID@ "+ id, "Field is empty");
+            Map<String, String> response = Map.of(
+                    "status", "Error",
+                    "details",  "ID@"+ id + ":" + "Field is empty");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
     }
 
     @PostMapping
-    public Map<String, String> createCategory(@Valid @RequestBody WasteCategory category) {
+    public ResponseEntity<Object> createCategory(@Valid @RequestBody WasteCategory category) {
         service.createCategory(category);
-        return success;
+        return ResponseEntity.ok(success);
     }
 
     @PutMapping("/update/{id}")
@@ -49,16 +52,17 @@ public class WasteCategoryController {
 
         boolean code = service.updateCategory(id, updatedCategory);
         if (!code){
-            Map<String, String> response = Map.of("ID@ "+ id, "Field is empty");
+            Map<String, String> response = Map.of(
+                    "status", "Error",
+                    "details",  "ID@"+ id + ":" + "Field is empty");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
         return ResponseEntity.ok(success);
     }
 
     @DeleteMapping("/delete/{id}")
-    public Map<String, String> deleteCategory(@PathVariable Integer id) {
+    public ResponseEntity<Object> deleteCategory(@PathVariable Integer id) {
         service.deleteCategory(id);
-        return success;
-
+        return ResponseEntity.ok(success);
     }
 }

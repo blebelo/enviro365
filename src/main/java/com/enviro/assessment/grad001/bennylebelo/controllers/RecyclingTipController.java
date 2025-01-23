@@ -21,30 +21,45 @@ public class RecyclingTipController {
     private final Map<String, String> success =  Map.of("Status", "Success");
 
     @GetMapping
-    public Map<String, Iterable<RecyclingTip>> getAllTips() {
-        return Map.of("Recycling Tips", service.getAllTips());
+    public ResponseEntity<Iterable<RecyclingTip>> getAllTips() {
+        return ResponseEntity.ok(service.getAllTips());
     }
 
     @GetMapping("/{id}")
-    public Map<String, Optional<RecyclingTip>> getTipById(@PathVariable Integer id){
-        return Map.of("ID" + id, service.getTipById(id));
+    public ResponseEntity<Object> getTipById(@PathVariable Integer id) {
+        Optional<RecyclingTip> tip = service.getTipById(id);
+        if (tip.isPresent()) {
+            return ResponseEntity.ok(tip);
+        } else {
+            Map<String, String> response = Map.of(
+                    "status", "Error",
+                    "details",  "ID@"+ id + ":" + "Field is empty");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+
     }
 
     @PostMapping
-    public ResponseEntity<RecyclingTip> createTip(@Valid @RequestBody RecyclingTip tip) {
-        return new ResponseEntity<>(service.createTip(tip), HttpStatus.CREATED);
+    public ResponseEntity<Object> createTip(@Valid @RequestBody RecyclingTip tip) {
+        service.createTip(tip);
+        return ResponseEntity.ok(success);
     }
 
     @PutMapping("/update/{id}")
-    public Map<String, String> updateTip(
-            @PathVariable Integer id, @Valid @RequestBody RecyclingTip tip) {
-            service.updateTip(id, tip);
-            return success;
+    public ResponseEntity<Object> updateTip(@PathVariable Integer id, @Valid @RequestBody RecyclingTip tip) {
+        RecyclingTip newTip = new RecyclingTip(tip.getCategory(), tip.getDescription());
+
+        boolean code = service.updateTip(id, newTip);
+        if (!code){
+            Map<String, String> response = Map.of("ID@ "+ id, "Field is empty");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+        return ResponseEntity.ok(success);
     }
 
     @DeleteMapping("/delete/{id}")
-    public Map<String, String> deleteTip(@PathVariable Integer id) {
+    public ResponseEntity<Object> deleteTip(@PathVariable Integer id) {
         service.deleteTip(id);
-        return success;
+        return ResponseEntity.ok(success);
     }
 }

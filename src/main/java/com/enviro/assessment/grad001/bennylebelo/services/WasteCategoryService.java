@@ -24,12 +24,13 @@ public class WasteCategoryService {
     }
 
     public void createCategory(WasteCategory category) {
-        WasteCategory updatedCategory = new WasteCategory(category.getName(), category.isRecyclable());
-        repository.save(updatedCategory);
+        WasteCategory newCategory = new WasteCategory(category.getName(), category.isRecyclable());
+        repository.save(newCategory);
     }
 
     public boolean updateCategory(Integer id, WasteCategory category) {
         Optional<WasteCategory> cat = repository.findById(id);
+
         if (cat.isPresent()) {
             WasteCategory existingCategory = cat.get();
             existingCategory.setName(category.getName());
@@ -41,7 +42,9 @@ public class WasteCategoryService {
     }
 
     public void deleteCategory(Integer id) {
-        if (!repository.existsById(id)) {throw new CustomSystemException("Field not found.");}
+        if (repository.findById(id).isEmpty()) {
+            throw new CustomSystemException("Field not found.");
+        }
         repository.deleteById(id);
 
     }

@@ -1,8 +1,5 @@
 package com.enviro.assessment.grad001.bennylebelo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
@@ -21,8 +18,8 @@ public class DisposalTip {
     public DisposalTip() {
     }
 
-    public DisposalTip(WasteCategory category, String description) {
-        this.category = category.getName();
+    public DisposalTip(String category, String description) {
+        this.category = category;
         this.description = description;
     }
 
@@ -34,8 +31,8 @@ public class DisposalTip {
         return category;
     }
 
-    public void setCategory(WasteCategory category) {
-        this.category = category.getName();
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getDescription() {

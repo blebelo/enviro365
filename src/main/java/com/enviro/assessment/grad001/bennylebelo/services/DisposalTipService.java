@@ -22,18 +22,27 @@ public class DisposalTipService {
     }
 
     public void createTip(DisposalTip tip) {
-        if (repository.existsById(tip.getId())) {throw new CustomSystemException("Field already exists.");}
-        repository.save(tip);
+        DisposalTip newTip = new DisposalTip(tip.getCategory(), tip.getDescription());
+        repository.save(newTip);
     }
 
-    public void updateTip(Integer id, DisposalTip tip) {
-        if (!repository.existsById(id)) {throw new CustomSystemException("Field not found.");}
-        repository.save(tip);
+    public boolean updateTip(Integer id, DisposalTip tip) {
+        Optional<DisposalTip> tipOptional = repository.findById(id);
+
+        if (tipOptional.isPresent()) {
+            DisposalTip newTip = tipOptional.get();
+            newTip.setDescription(tip.getDescription());
+            newTip.setCategory(tip.getCategory());
+            repository.save(newTip);
+            return true;
+        }
+        return false;
     }
 
     public void deleteTip(Integer id) {
-        if (!repository.existsById(id)) {throw new CustomSystemException("Field not found.");}
+        if (repository.findById(id).isEmpty()) {
+            throw new CustomSystemException("Field not found.");
+        }
         repository.deleteById(id);
-
     }
 }
