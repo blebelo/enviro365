@@ -54,9 +54,10 @@ Once running you may access components of the application through the following 
    - Username = user
    
 
-### 4. Run Tests _(Optional)_
+### Shortcut
+Or you could just run the following command in your terminal
 ```bash
-   mvn test
+   make
 ```
 ___
 

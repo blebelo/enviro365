@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.enviro.assessment.grad001.bennylebelo.BennylebeloApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.741 s -- in com.enviro.assessment.grad001.bennylebelo.BennylebeloApplicationTests
