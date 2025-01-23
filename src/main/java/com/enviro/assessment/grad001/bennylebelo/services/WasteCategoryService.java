@@ -20,22 +20,24 @@ public class WasteCategoryService {
     }
 
     public Optional<WasteCategory> getCategoryById(Integer id) {
-        if (!repository.existsById(id)) {
-            throw new CustomSystemException("Field not found.");
-        }
         return repository.findById(id);
     }
 
     public void createCategory(WasteCategory category) {
-        if (repository.existsById(category.getId())) {throw new CustomSystemException("Field already exists.");}
-        repository.save(category);
+        WasteCategory updatedCategory = new WasteCategory(category.getName(), category.isRecyclable());
+        repository.save(updatedCategory);
     }
 
-    public void updateCategory(Integer id, WasteCategory category) {
-        if (!repository.existsById(id)) {
-            throw new CustomSystemException("Field not found.");
+    public boolean updateCategory(Integer id, WasteCategory category) {
+        Optional<WasteCategory> cat = repository.findById(id);
+        if (cat.isPresent()) {
+            WasteCategory existingCategory = cat.get();
+            existingCategory.setName(category.getName());
+            existingCategory.setRecyclable(category.isRecyclable());
+            repository.save(existingCategory);
+            return true;
         }
-        repository.save(category);
+        return false;
     }
 
     public void deleteCategory(Integer id) {

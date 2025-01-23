@@ -10,21 +10,19 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.ZonedDateTime;
 
-@RestControllerAdvice
+//@RestControllerAdvice
 public class SystemExceptionHandler {
-
-    @ExceptionHandler(value = {CustomSystemException.class})
-    public ResponseEntity<Object> handleCustomSystemException(CustomSystemException e) {
-        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
-
-        SystemException error = new SystemException(
-                e.getMessage(),
-                e,
-                status,
-                ZonedDateTime.now()
-        );
-        return new ResponseEntity<>(error, status);
-
-
-    }
+//
+//    @ExceptionHandler(value = {CustomSystemException.class})
+//    public ResponseEntity<Object> handleCustomSystemException(CustomSystemException e) {
+//        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+//
+//        SystemException error = new SystemException(
+//                e.getMessage(),
+//                e,
+//                status,
+//                ZonedDateTime.now()
+//        );
+//        return new ResponseEntity<>(error, status);
+//    }
 }

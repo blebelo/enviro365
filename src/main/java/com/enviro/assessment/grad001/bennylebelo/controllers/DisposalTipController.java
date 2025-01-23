@@ -33,7 +33,7 @@ public class DisposalTipController {
         return success;
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public Map<String, String> updateTip(
             @PathVariable Integer id, @Valid @RequestBody DisposalTip tip) {
             service.updateTip(id, tip);
@@ -41,7 +41,7 @@ public class DisposalTipController {
 
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public Map<String, String> deleteTip(@PathVariable Integer id) {
         service.deleteTip(id);
         return success;

@@ -4,8 +4,11 @@ import com.enviro.assessment.grad001.bennylebelo.models.WasteCategory;
 import com.enviro.assessment.grad001.bennylebelo.services.WasteCategoryService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -15,16 +18,23 @@ public class WasteCategoryController {
     @Autowired
     private WasteCategoryService service;
 
-    private final Map<String, String> success =  Map.of("Status", "Success");
+    private final Map<String, String> success = Map.of("Status", "Success");
 
     @GetMapping
-    public Map<String, Iterable<WasteCategory>> getAllCategories() {
-        return Map.of("Waste Categories", service.getAllCategories());
+    public ResponseEntity<Iterable<WasteCategory>> getAllCategories(){
+        return ResponseEntity.ok(service.getAllCategories());
     }
 
     @GetMapping("/{id}")
-    public Map<String, Optional<WasteCategory>> getCategoryById(@PathVariable Integer id){
-        return Map.of("ID@" + id, service.getCategoryById(id));
+    public ResponseEntity<Object> getCategoryById(@PathVariable Integer id) {
+        Optional<WasteCategory> category = service.getCategoryById(id);
+
+        if (category.isPresent()) {
+            return ResponseEntity.ok(category);
+        } else {
+            Map<String, String> response = Map.of("ID@ "+ id, "Field is empty");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
     }
 
     @PostMapping
@@ -33,15 +43,19 @@ public class WasteCategoryController {
         return success;
     }
 
-    @PutMapping("/{id}")
-    public Map<String, String> updateCategory(
-            @PathVariable Integer id, @Valid @RequestBody WasteCategory category) {
-        service.updateCategory(id, category);
-        return success;
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Object> updateCategory(@PathVariable Integer id, @Valid @RequestBody WasteCategory category) {
+        WasteCategory updatedCategory = new WasteCategory(category.getName(), category.isRecyclable());
 
+        boolean code = service.updateCategory(id, updatedCategory);
+        if (!code){
+            Map<String, String> response = Map.of("ID@ "+ id, "Field is empty");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+        return ResponseEntity.ok(success);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public Map<String, String> deleteCategory(@PathVariable Integer id) {
         service.deleteCategory(id);
         return success;

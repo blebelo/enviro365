@@ -35,14 +35,14 @@ public class RecyclingTipController {
         return new ResponseEntity<>(service.createTip(tip), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public Map<String, String> updateTip(
             @PathVariable Integer id, @Valid @RequestBody RecyclingTip tip) {
             service.updateTip(id, tip);
             return success;
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public Map<String, String> deleteTip(@PathVariable Integer id) {
         service.deleteTip(id);
         return success;

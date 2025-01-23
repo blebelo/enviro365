@@ -1,21 +1,21 @@
 package com.enviro.assessment.grad001.bennylebelo.models;
 
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 
-@Table("Waste_Categories")
+@Table("WASTE_CATEGORIES")
 public class WasteCategory {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotEmpty(message= "Field may not be empty")
     private String name;
 
-    @NotEmpty(message= "Field may not be empty")
+    @NotNull(message= "Field may not be null")
     private Boolean recyclable;
 
     public WasteCategory() {
@@ -45,4 +45,6 @@ public class WasteCategory {
     public void setRecyclable(Boolean recyclable) {
         this.recyclable = recyclable;
     }
+
+
 }
