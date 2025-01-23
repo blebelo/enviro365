@@ -3,15 +3,14 @@ package com.enviro.assessment.grad001.bennylebelo.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 
-@Table("Disposal_Tips")
+@Table("DISPOSAL_TIPS")
 public class DisposalTip {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotEmpty(message= "Field may not be empty")
