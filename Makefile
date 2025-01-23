@@ -1,12 +1,20 @@
-MAIN =  "src/main/java/com/enviro/assessment/grad001/bennylebelo/Main.java"
+# Makefile
 
-default: compile run
+# Default target
+.PHONY: all
+all: clean install run
 
-compile:
-	@mvn compile
+# Clean target
+.PHONY: clean
+clean:
+	mvn clean
 
+# Install target
+.PHONY: install
+install:
+	mvn install
+
+# Run Spring Boot application
+.PHONY: run
 run:
-	@java $(MAIN)
-
-
-.PHONY: default compile run
+	mvn spring-boot:run

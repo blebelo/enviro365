@@ -5,8 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
+import org.springframework.data.relational.core.mapping.Table;
 
-@Entity(name= "Recycling_Tips")
+@Table("Recycling_Tips")
 public class RecyclingTip {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

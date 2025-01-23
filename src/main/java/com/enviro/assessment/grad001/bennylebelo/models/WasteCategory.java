@@ -3,9 +3,10 @@ package com.enviro.assessment.grad001.bennylebelo.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import org.springframework.data.relational.core.mapping.Table;
 
 
-@Entity(name = "Waste_Categories")
+@Table("Waste_Categories")
 public class WasteCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,7 @@
 package com.enviro.assessment.grad001.bennylebelo.services;
 
 
+import com.enviro.assessment.grad001.bennylebelo.exceptions.CustomSystemException;
 import com.enviro.assessment.grad001.bennylebelo.models.WasteCategory;
 import com.enviro.assessment.grad001.bennylebelo.repositories.WasteCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,24 +20,26 @@ public class WasteCategoryService {
     }
 
     public Optional<WasteCategory> getCategoryById(Integer id) {
+        if (!repository.existsById(id)) {
+            throw new CustomSystemException("Field not found.");
+        }
         return repository.findById(id);
     }
 
-    public WasteCategory createCategory(WasteCategory category) {
-        return repository.save(category);
+    public void createCategory(WasteCategory category) {
+        if (repository.existsById(category.getId())) {throw new CustomSystemException("Field already exists.");}
+        repository.save(category);
     }
 
-    public WasteCategory updateCategory(Integer id, WasteCategory category) {
+    public void updateCategory(Integer id, WasteCategory category) {
         if (!repository.existsById(id)) {
-            throw new RuntimeException("Category not found");
+            throw new CustomSystemException("Field not found.");
         }
-        return repository.save(category);
+        repository.save(category);
     }
 
     public void deleteCategory(Integer id) {
-        if (!repository.existsById(id)) {
-            throw new RuntimeException("Field not found.");
-        }
+        if (!repository.existsById(id)) {throw new CustomSystemException("Field not found.");}
         repository.deleteById(id);
 
     }

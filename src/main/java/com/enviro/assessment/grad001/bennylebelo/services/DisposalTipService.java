@@ -1,5 +1,6 @@
 package com.enviro.assessment.grad001.bennylebelo.services;
 
+import com.enviro.assessment.grad001.bennylebelo.exceptions.CustomSystemException;
 import com.enviro.assessment.grad001.bennylebelo.models.DisposalTip;
 import com.enviro.assessment.grad001.bennylebelo.repositories.DisposalTipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,21 +21,18 @@ public class DisposalTipService {
         return repository.findById(id);
     }
 
-    public DisposalTip createTip(DisposalTip tip) {
-        return repository.save(tip);
+    public void createTip(DisposalTip tip) {
+        if (repository.existsById(tip.getId())) {throw new CustomSystemException("Field already exists.");}
+        repository.save(tip);
     }
 
-    public DisposalTip updateTip(Integer id, DisposalTip tip) {
-        if (!repository.existsById(id)) {
-            throw new RuntimeException("Field not found");
-        }
-        return repository.save(tip);
+    public void updateTip(Integer id, DisposalTip tip) {
+        if (!repository.existsById(id)) {throw new CustomSystemException("Field not found.");}
+        repository.save(tip);
     }
 
     public void deleteTip(Integer id) {
-        if (!repository.existsById(id)) {
-            throw new RuntimeException("Field not found.");
-        }
+        if (!repository.existsById(id)) {throw new CustomSystemException("Field not found.");}
         repository.deleteById(id);
 
     }

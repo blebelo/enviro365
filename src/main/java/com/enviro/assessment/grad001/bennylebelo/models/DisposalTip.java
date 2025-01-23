@@ -5,8 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
+import org.springframework.data.relational.core.mapping.Table;
 
-@Entity(name= "Disposal_Tips")
+
+@Table("Disposal_Tips")
 public class DisposalTip {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

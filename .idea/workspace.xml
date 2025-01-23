@@ -5,20 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a10d019e-da2b-4aa9-8239-db82880bbf9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/ItemController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/ItemRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/ItemService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/controllers/WasteCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/controllers/WasteCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/models/DisposalTip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/models/DisposalTip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/models/RecyclingTip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/models/RecyclingTip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/models/WasteCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/models/WasteCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/services/DisposalTipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/services/DisposalTipService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/services/RecyclingTipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/services/RecyclingTipService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/services/WasteCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enviro/assessment/grad001/bennylebelo/services/WasteCategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bennylebelo-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bennylebelo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/controllers/DisposalTipController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/controllers/DisposalTipController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/controllers/RecyclingTipController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/controllers/RecyclingTipController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/controllers/WasteCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/controllers/WasteCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/models/DisposalTip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/models/DisposalTip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/models/RecyclingTip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/models/RecyclingTip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/models/WasteCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/models/WasteCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/services/DisposalTipService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/services/DisposalTipService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/services/RecyclingTipService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/services/RecyclingTipService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/services/WasteCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/enviro/assessment/grad001/bennylebelo/services/WasteCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.enviro.assessment.grad001.bennylebelo.BennylebeloApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.enviro.assessment.grad001.bennylebelo.BennylebeloApplicationTests.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +50,7 @@
       <list>
         <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -78,7 +99,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/benny/Home/Personal/Portfolio/bennylebelo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/benny/Home/Personal/Portfolio/grad/enviro365&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -87,7 +108,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -101,12 +122,19 @@
       <recent name="com.enviro.assessment.grad001.bennylebelo" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="Spring Boot.BennylebeloApplication">
     <configuration name="run" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="run" workingDirectory="" arguments="">
         <envs />
       </makefile>
       <method v="2" />
+    </configuration>
+    <configuration name="BennylebeloApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="bennylebelo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.enviro.assessment.grad001.bennylebelo.BennylebeloApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="bennylebelo" />
@@ -144,6 +172,15 @@
       <workItem from="1737346768060" duration="3514000" />
       <workItem from="1737556913832" duration="86000" />
       <workItem from="1737557008018" duration="3641000" />
+      <workItem from="1737577155606" duration="23000" />
+      <workItem from="1737577192827" duration="6000" />
+      <workItem from="1737577204903" duration="553000" />
+      <workItem from="1737578441292" duration="10000" />
+      <workItem from="1737578470653" duration="433000" />
+      <workItem from="1737579196657" duration="6031000" />
+      <workItem from="1737625662975" duration="1179000" />
+      <workItem from="1737635714122" duration="1431000" />
+      <workItem from="1737637160424" duration="7202000" />
     </task>
     <servers />
   </component>
@@ -157,7 +194,14 @@
           <properties class="jakarta.servlet.ServletException" package="jakarta.servlet" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanDefinitionStoreException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

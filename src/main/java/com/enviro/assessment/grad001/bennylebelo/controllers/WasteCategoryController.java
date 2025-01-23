@@ -24,7 +24,7 @@ public class WasteCategoryController {
 
     @GetMapping("/{id}")
     public Map<String, Optional<WasteCategory>> getCategoryById(@PathVariable Integer id){
-        return Map.of("ID" + id, service.getCategoryById(id));
+        return Map.of("ID@" + id, service.getCategoryById(id));
     }
 
     @PostMapping
