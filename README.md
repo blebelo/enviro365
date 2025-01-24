@@ -55,6 +55,11 @@ Once running you may access components of the application through the following 
    - Username = user
    
 
+### 4. Test
+```bash
+   mvn test
+```
+
 ### Shortcut
 Or you could just run the following command in your terminal
 ```bash
